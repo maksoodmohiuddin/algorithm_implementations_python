@@ -10,6 +10,7 @@ def answer(food, grid):
     node = [0, [start_node]]
     frontier = []
     frontier.append(node)
+
     goal_node = (n-1, n-1)
 
     while frontier:
