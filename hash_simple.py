@@ -37,10 +37,10 @@ def answer(digest):
             else:
                 m = ((129 * hash) ^ 0) % 256
 
-        #if hash > 255:
-        #    hash = 255
-        #elif hash < 0:
-        #    hash = 0
+        if hash > 255:
+            hash = 0
+        elif hash < 0:
+            hash = 255
 
         output.append(hash)
 
