@@ -25,3 +25,28 @@ print A
 b = quickSort(A)
 print b
 
+def quickSortInPlace(input):
+    if len(input) == 1:
+        return
+
+    left = 1
+    right = len(input) - 1
+
+    pivot = input[0]
+
+    while left < right:
+        while input[left] < pivot:
+            left += 1
+
+        while input[right] > pivot:
+            right -= 1
+
+        # swap
+        temp = input[left]
+        input[right] = input[left]
+        input[left] = temp
+
+    print input
+
+
+#quickSortInPlace(A)

@@ -39,3 +39,33 @@ def merge_sort(input):
 print a
 print merge_sort(a)
 
+def mergesort_new(a):
+    result = []
+
+    if len(a) == 1:
+        return a
+
+    mid = len(a) / 2
+    left_in = a[:mid]
+    right_in = a[mid:]
+
+    left =  mergesort_new(left_in)
+    right = mergesort_new(right_in)
+
+    i = 0
+    j = 0
+
+    while (len(left) > i and len(right) > j):
+        if (left[i] < right[j]):
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result += left[i:]
+    result += right[j:]
+    return result
+
+b= [14, 33, 27, 9, 35, 19, 42, 44]
+print mergesort_new(b)
